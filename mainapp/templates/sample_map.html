@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	html, body, #map-canvas { 
+		height: 100%; 
+		margin-top: 0%; 
+		margin-left: 0px; 
+		margin-right: 0px;
+		margin-bottom: 0px;}
+	</style>
+	<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXbBw87HV_1k4hRHTaxvDeuU4GyFNCEjg">
+	</script>
+	<script type="text/javascript">
+
+
+
+
+	function initialize() {
+		var xList = {{xList}};
+		var yList = {{yList}};
+		var nameList = {{nameList}};
+		var tweetList = {{tweetList}};
+		var popList = {{popList}};
+
+		var myLatlng = new google.maps.LatLng(42.0567656,-87.6761992);
+		var bounds = new google.maps.LatLngBounds();
+		var mapOptions = {
+			zoom: 15,
+			center: myLatlng
+		};
+		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		//var image = "http://imgur.com/liXnoGS";
+
+		var infowindow = new google.maps.InfoWindow({maxWidth: 400});
+		var contentString;
+
+		var marker1 = "http://i.imgur.com/k3I6YgT.png";
+		var marker2 = "http://i.imgur.com/bDdZgc1.png";
+		var marker3 = "http://i.imgur.com/pycd6Zg.png";
+		var marker4 = "http://i.imgur.com/gVbFwhu.png";
+
+
+		var marker, i;
+
+		for(i=0; i<xList.length; i++){
+			
+			var position = new google.maps.LatLng(xList[i], yList[i]);
+			//bounds.extend(position);
+
+			var icon;
+			if (popList[i]===1){
+					icon = marker1;
+				}
+				else if (popList[i]===2){
+					icon = marker2;
+				}
+				else if (popList[i]===3){
+					icon = marker3;
+				}
+				else {
+					icon = marker4;
+				}
+			marker = new google.maps.Marker({
+				animation: google.maps.Animation.DROP,
+				position: position,
+				map: map,
+				icon: icon,
+			});
+
+
+			
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				return function(){
+					contentString = '<div id="content" class = "MarkerPop" style="height:450px">'+
+					'<h1 id="firstHeading" class="firstHeading">'+ nameList[i] + '</h1>';
+					
+
+					var j;
+					var tweetString = '';
+					for (j = 0; j<tweetList[i].length; j++){
+						var author = '@'+tweetList[i][j][0];
+						var text = tweetList[i][j][1];
+						var time = tweetList[i][j][2];
+						var imageLink = tweetList[i][j][3];
+						tweetString += '<div class = "authortext" style="size:10px; color: grey;" >' + '<p>' + author + ' '+ time + '</p> </div>';
+						tweetString += '<div class = "authortext" style="size:12px; color: black;" >' + text + '</div>';
+						tweetString += '<p></p>';
+						if(imageLink != ''){
+						    tweetString += '<div class = "tweetImage"> <a href ="'+imageLink+'" target="_blank"> <img src="' + imageLink + '"style = "max-height: 100px; max-width:300px"> </a> </div>'
+						    tweetString += '<p></p>';
+						    }
+					}
+					contentString += tweetString;
+					contentString += '</div>';
+
+					infowindow.setContent(contentString);
+					infowindow.open(map,marker);
+				}
+			})(marker, i));
+
+			//map.fitBounds(bounds);
+}
+		
+
+		//var boundsListener = google.maps.event.addListener((map), 'bounds_changed',function(event){
+		//	this.setZoom(11);
+		//	google.maps.event.removeListener(boundsListener);
+		//});
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+</head>
+<body>
+	<div id="map-canvas"></div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+.jumbotron{
+  background-image:url('first-page3.jpg');
+  background-position:center;
+  height: 700px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin-right:auto;
+  margin-left:auto;
+ }
+ 
+ .jumbotron h1{
+  color: #ffffff;
+  font-size: 100px;  
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif; 
+  font-weight: bold;
+  text-align:center;
+ }
+ 
+  .jumbotron h3{
+  color:#ffffff;
+  text-align:center; }
+  
+.jumbotron container{
+    margin-top:100px;
+   }
+
+.jumbotron2 container{
+  background:#ffffff; 
+  background-size: cover;
+  height: 700px;
+  margin-left:0px;
+}
+
+.jumbotron3{ 
+  background-image:url('last-page3.jpg');
+  background-size:cover; 
+  background-position:center;
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:0px;
+  height: 700px;
+}
+
+
+.jumbotron3 h1{ 
+  color: #ffffff;
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 0px;
+  padding-top:100px;
+}
+
+.strip1 h2{
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+  margin-top: 0 auto;
+  margin-bottom:0 auto;
+  color: #ffffff;
+  text-align:center;
+}
+
+.strip1{
+  margin-top:100px;
+  background-color:#000000;
+  opacity:0.4;
+}
+
+.slide-nav{
+  width: 10px;
+  height: 10px;
+}
+
+.slide{
+  display: none;
+}
+
+.active-slide{
+  display:block;
+}
+
+.slide-copy{
+  background:#40E0D0;
+  opacity:0.5;
+  height: 700px;
+  position:relative;
+  margin: auto;
+  margin-left:0px;
+}
+
+.slide-copy h1{
+  display: inline-block;
+  margin-bottom:auto;
+  margin-top:200px;
+  position:relative;
+  vertical-align:middle;
+}
+
+.slider-nav2
+{
+    height: 100px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+} 
+ 
+.dropdown
+{
+  text-align:center;
+} 
+
+.dropdown select
+{ 
+  background:#505050;
+  width:268px;
+  color:#ffffff;
+  border: 8px solid #ffffff;
+  font-size:20px;
+} 
+
+

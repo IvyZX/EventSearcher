@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Twitter King</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="front.css">
+  </head>
+  
+  
+  <body>
+ 
+  <div slider>
+  
+  <div class = "slide active-slide">
+    <div class = "jumbotron">
+      <div class = "container">
+	  <div class = "row">
+	  <div class = "col-md-0">
+	  </div>
+	  <div class = "col-md-3">
+	    <h1>Twitter King</h1>
+		<h3>Don't eat alone</h3>
+		<h3>Check out what's nearby you</h3>	
+	  </div>
+	  </div>
+	  </div>
+	  
+	  <div class="slider-nav2">
+	  <div class = "row">
+	  <div class = "col-md-11">
+	  </div>
+	  <div class = "col-md-1">
+      <a href="#" class="arrow-next1"><img src="arrownext2.png"></a>
+	  </div>
+	  </div>
+      </div>
+	</div>
+	
+	
+  </div>
+  
+  <!-------------------------------------------------slide2------------------------------------------------------------>
+  <div class = "slide slide2">
+  	<div class = "jumbotronx">
+      <div class = "container">
+	  <div class = "row">
+	  <div class = "slide-copy col-md-3">
+	    <h1>Information Grabbed from Facebook & Twitter</h1>
+		<h4>Quick.</h4>	
+  	  </div>
+	  <div class="slide-img2 col-md-8">
+        <img src="ft.jpg" width="1100px" height="600px" margin-top="100px">
+	  </div>
+	  <div class="slider-nav2 col-md-12">
+        <a href="#" class="arrow-next2"><img src="arrownext2.png" align=right></a>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+  </div>
+  <!-----------------------------------------------Slide3---------------------------------------------------------->
+  <div class = "slide slide3">
+  	<div class = "jumbotron2">
+      <div class = "container">
+	  <div class = "row">
+	  <div class = "slide-copy col-md-3">
+	    <h1>Google Map Locations show you the hottest spot around you</h1>
+		<h4>Easy.</h4>	
+  	  </div>
+	  <div class="slide-img2 col-md-8">
+        <img src="map.png" width="1000px" height="100%">
+	  </div>
+	  <div class="slider-nav2 col-md-12">
+        <a href="#" class="arrow-next3"><img src="arrownext2.png" align=right></a>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+  </div>
+  <!-----------------------------------------------Slide4-------------------------------------------------------->
+  <div class = "slide slide4">
+    <div class = "jumbotron3">
+	 <h1 align = "center">Try Out Your Self</h1>
+	 <div class = "strip1">
+	  <div class = "chooseLoc">
+	  	   <h2 align = "center">choose your school</h2>
+		   <div class = "dropdown">
+		   
+		   <form action = chooseSchool.php method = post>
+		   <select name = "nav" onchange="location = this.options[this.selectedIndex].value;">
+		           <option value="">Here</option>
+		   		   <option value="NUSample.html">Northwestern University</option>
+				   <option>University of Toronto</option>
+		   </select>
+		   </form>
+		   </div>
+	  </div>
+     </div>
+	</div>
+  </div>
+  
+  </div>
+  
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   	<script src="front.js"></script>
+  </body>
+</html>
